@@ -110,7 +110,7 @@ h2.title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700}
 
 /* Fees */
 .tbl{margin-top:2rem;overflow-x:auto;border-radius:1rem}
-table{width:100%;min-width:34rem;border-collapse:collapse;background:var(--card)}
+table{width:100%;min-width:42rem;border-collapse:collapse;background:var(--card)}
 th,td{padding:.9rem 1rem;text-align:left;border-bottom:1px solid var(--line)}
 thead th{background:var(--forest);color:#fff}
 tbody th{font-weight:600}
@@ -259,20 +259,24 @@ html{-webkit-text-size-adjust:100%}
 <section id="admissions" class="block">
   <div class="reveal wrap">
     <h2 class="title">Admissions &amp; fees</h2>
-    <p class="muted" style="margin-top:1rem;max-width:40rem">Fees follow the school brochure. Amounts show “Confirm” until the official figures are added; call the office for the current schedule.</p>
+    <p class="muted" style="margin-top:1rem;max-width:40rem">Fees are taken from the school brochure and are in Uganda shillings (UGX). Please confirm the current amounts with the school office before making any payment.</p>
     <div class="tbl card">
       <table>
-        <caption style="position:absolute;left:-999px">Dugnad School fee structure</caption>
-        <thead><tr><th scope="col">Item</th><th scope="col">Kindergarten</th><th scope="col">Lower Primary</th></tr></thead>
+        <caption style="position:absolute;left:-999px">Dugnad School fee structure in UGX</caption>
+        <thead><tr><th scope="col">Item (UGX)</th><th scope="col">Daycare</th><th scope="col">Kindergarten</th><th scope="col">Lower Primary (P.1 – P.3)</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Admission fee</th><td>Confirm</td><td>Confirm</td></tr>
-          <tr><th scope="row">Tuition (per term)</th><td>Confirm</td><td>Confirm</td></tr>
-          <tr><th scope="row">Boarding option</th><td>Confirm</td><td>Confirm</td></tr>
-          <tr><th scope="row">Day care</th><td colspan="2">Confirm</td></tr>
-          <tr><th scope="row">Transport (school van)</th><td colspan="2">Confirm</td></tr>
+          <tr><th scope="row">Admission fee (new entrants)</th><td>50,000</td><td>50,000</td><td>50,000</td></tr>
+          <tr><th scope="row">Tuition: half day</th><td>–</td><td>350,000</td><td>–</td></tr>
+          <tr><th scope="row">Tuition: full day</th><td>600,000 per term<br><span class="muted">or 10,000 per day</span></td><td>500,000</td><td>500,000</td></tr>
+          <tr><th scope="row">Tuition: boarding</th><td>–</td><td>1,000,000</td><td>1,000,000</td></tr>
+          <tr><th scope="row">Full uniform</th><td>–</td><td>175,000</td><td>175,000</td></tr>
+          <tr><th scope="row">Swimming (optional)</th><td>60,000</td><td>60,000</td><td>60,000</td></tr>
+          <tr><th scope="row">Domestic requirements</th><td>–</td><td>80,000</td><td>100,000</td></tr>
+          <tr><th scope="row">Transport (school van)</th><td colspan="3">Charged according to stages, depending on distance</td></tr>
         </tbody>
       </table>
     </div>
+    <p class="muted" style="margin-top:1rem;font-size:.9rem">Daycare requirements: consult the administration. A dash means the brochure lists no charge for that item.</p>
     <div class="row-btns">
       <a href="#contact" class="btn btn-coral">Enroll Now</a>
       <a href="tel:+256778947496" class="btn btn-line">Call the office</a>
@@ -353,7 +357,7 @@ document.getElementById('enquiry').addEventListener('submit',function(e){
   e.preventDefault();
   var f=new FormData(e.target),out=document.getElementById('formMsg');
   if(!f.get('name').trim()||!f.get('phone').trim()){out.textContent='Please enter your name and phone number.';return;}
-  var text='Hello Dugnad School, I am '+f.get('name')+' ('+f.get('phone')+'). I am interested in '+f.get('section')+'. '+f.get('msg');
+  var text='Hello Dugnad School  admin, I am '+f.get('name')+' ('+f.get('phone')+'). I am interested in '+f.get('section')+'. '+f.get('msg');
   window.open('https://wa.me/256778947496?text='+encodeURIComponent(text),'_blank','noopener');
   out.textContent='Opening WhatsApp with your enquiry.';
 });
